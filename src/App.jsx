@@ -9,6 +9,8 @@ import S06Challenge from "./s06-component-jsx/Challenge";
 import S06Solution from "./s06-component-jsx/Solution";
 import S07Challenge from "./s07-self-introduction/Challenge";
 import S07Solution from "./s07-self-introduction/Solution";
+import S08Challenge from "./s08-default-parameters/Challenge";
+import S08Solution from "./s08-default-parameters/Solution";
 
 function App() {
   // to switch between the challenge and the solution, change the line below:
