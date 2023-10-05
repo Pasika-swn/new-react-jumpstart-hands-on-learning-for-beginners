@@ -5,6 +5,8 @@ import "./App.css";
 
 import S05Challenge from "./s05-basic-jsx/Challenge";
 import S05Solution from "./s05-basic-jsx/Solution";
+import S06Challenge from "./s06-component-jsx/Challenge";
+import S06Solution from "./s06-component-jsx/Solution";
 
 function App() {
   // to switch between the challenge and the solution, change the line below:
