@@ -30,6 +30,9 @@ import S13Solution from "./s13-children-prop/Solution";
 import S14Challenge from "./s14-prop-types/Challenge";
 import S14Solution from "./s14-prop-types/Solution";
 
+import S15Challenge from "./s15-event-handler/Challenge";
+import S15Solution from "./s15-event-handler/Solution";
+
 function App() {
   // to switch between the challenge and the solution, change the line below:
   return <S05Challenge />;
