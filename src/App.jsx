@@ -13,6 +13,8 @@ import S08Challenge from "./s08-default-parameters/Challenge";
 import S08Solution from "./s08-default-parameters/Solution";
 import S09Challenge from "./s09-conditional-rendering/Challenge";
 import S09Solution from "./s09-conditional-rendering/Solution";
+import S11Challenge from "./s11-render-array/Challenge";
+import S11Solution from "./s11-render-array/Solution";
 
 function App() {
   // to switch between the challenge and the solution, change the line below:
