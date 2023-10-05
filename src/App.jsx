@@ -24,6 +24,9 @@ import S11Solution from "./s11-render-array/Solution";
 import S12Challenge from "./s12-render-object/Challenge";
 import S12Solution from "./s12-render-object/Solution";
 
+import S13Challenge from "./s13-children-prop/Challenge";
+import S13Solution from "./s13-children-prop/Solution";
+
 function App() {
   // to switch between the challenge and the solution, change the line below:
   return <S05Challenge />;
