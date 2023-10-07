@@ -42,6 +42,9 @@ import S18Solution from "./s18-update-state-onclick/Solution";
 import S19Challenge from "./s19-challenge-dateofbirth/Challenge";
 import S19Solution from "./s19-challenge-dateofbirth/Solution";
 
+import S20Challenge from "./s20-challenge-conditional-rendering/Challenge";
+import S20Solution from "./s20-challenge-conditional-rendering/Solution";
+
 function App() {
   // to switch between the challenge and the solution, change the line below:
   return <S05Challenge />;
