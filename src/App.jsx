@@ -21,8 +21,8 @@ import S09Solution from "./s09-conditional-rendering/Solution";
 import S11Challenge from "./s11-render-array/Challenge";
 import S11Solution from "./s11-render-array/Solution";
 
-import S12Challenge from "./s12-render-object/Challenge";
-import S12Solution from "./s12-render-object/Solution";
+import S12Challenge from "./s12-map-array/Challenge";
+import S12Solution from "./s12-map-array/Solution";
 
 import S13Challenge from "./s13-children-prop/Challenge";
 import S13Solution from "./s13-children-prop/Solution";
@@ -30,8 +30,8 @@ import S13Solution from "./s13-children-prop/Solution";
 import S14Challenge from "./s14-prop-types/Challenge";
 import S14Solution from "./s14-prop-types/Solution";
 
-import S15Challenge from "./s15-event-handler/Challenge";
-import S15Solution from "./s15-event-handler/Solution";
+import S15Challenge from "./s15-inline-style/Challenge";
+import S15Solution from "./s15-inline-style/Solution";
 
 import S17Challenge from "./s17-save-input-state/Challenge";
 import S17Solution from "./s17-save-input-state/Solution";
@@ -42,8 +42,8 @@ import S18Solution from "./s18-update-state-onclick/Solution";
 import S19Challenge from "./s19-challenge-dateofbirth/Challenge";
 import S19Solution from "./s19-challenge-dateofbirth/Solution";
 
-import S20Challenge from "./s20-challenge-conditional-rendering/Challenge";
-import S20Solution from "./s20-challenge-conditional-rendering/Solution";
+import S20Challenge from "./s20-challenge-calendar-input/Challenge";
+import S20Solution from "./s20-challenge-calendar-input/Solution";
 
 import S21Challenge from "./s21-dayjs/Challenge";
 import S21Solution from "./s21-dayjs/Solution";
