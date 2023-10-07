@@ -39,6 +39,9 @@ import S17Solution from "./s17-save-input-state/Solution";
 import S18Challenge from "./s18-update-state-onclick/Challenge";
 import S18Solution from "./s18-update-state-onclick/Solution";
 
+import S19Challenge from "./s19-challenge-dateofbirth/Challenge";
+import S19Solution from "./s19-challenge-dateofbirth/Solution";
+
 function App() {
   // to switch between the challenge and the solution, change the line below:
   return <S05Challenge />;
