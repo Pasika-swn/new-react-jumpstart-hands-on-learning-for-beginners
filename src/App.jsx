@@ -54,6 +54,9 @@ import S22Solution from "./s22-hobby-input/Solution";
 import S23Challenge from "./s23-fix-html-for/Challenge";
 import S23Solution from "./s23-fix-html-for/Solution";
 
+import S24Challenge from "./s24-removable-hobby/Challenge";
+import S24Solution from "./s24-removable-hobby/Solution";
+
 function App() {
   // to switch between the challenge and the solution, change the line below:
   return <S05Challenge />;
