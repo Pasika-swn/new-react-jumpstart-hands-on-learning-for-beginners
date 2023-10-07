@@ -45,6 +45,9 @@ import S19Solution from "./s19-challenge-dateofbirth/Solution";
 import S20Challenge from "./s20-challenge-conditional-rendering/Challenge";
 import S20Solution from "./s20-challenge-conditional-rendering/Solution";
 
+import S21Challenge from "./s21-dayjs/Challenge";
+import S21Solution from "./s21-dayjs/Solution";
+
 function App() {
   // to switch between the challenge and the solution, change the line below:
   return <S05Challenge />;
