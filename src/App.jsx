@@ -48,6 +48,9 @@ import S20Solution from "./s20-challenge-calendar-input/Solution";
 import S21Challenge from "./s21-dayjs/Challenge";
 import S21Solution from "./s21-dayjs/Solution";
 
+import S22Challenge from "./s22-hobby-input/Challenge";
+import S22Solution from "./s22-hobby-input/Solution";
+
 function App() {
   // to switch between the challenge and the solution, change the line below:
   return <S05Challenge />;
