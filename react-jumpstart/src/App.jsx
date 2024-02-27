@@ -24,6 +24,11 @@ const SelfIntroduction = ({ name = "unknown", DOB, hobbies = [] }) => {
   );
 };
 
+const Test = ({ children }) => {
+  // console.log(children);
+  return <h3>{children}</h3>;
+};
+
 function App() {
   return (
     <div className="App">
@@ -33,6 +38,17 @@ function App() {
         DOB="22/9/37"
         hobbies={["playing game", "watching movies", "Eat"]}
       />
+
+      <Test>
+        <div>
+          <div>I love you</div>
+          <h2>Halooo</h2>
+          ABC
+        </div>
+      </Test>
+
+      <Test>ABCD</Test>
+      <Test>123</Test>
     </div>
   );
 }
