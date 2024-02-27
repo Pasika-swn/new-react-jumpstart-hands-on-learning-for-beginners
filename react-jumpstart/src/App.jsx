@@ -4,8 +4,8 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 // props is immutable obj
-const SelfIntroduction = (props) => {
-  return <h1>"My name is {props.name}."</h1>;
+const SelfIntroduction = ({ name = 'unknown' }) => {
+  return <h1>"My name is {name}."</h1>;
 };
 
 function App() {
@@ -13,6 +13,10 @@ function App() {
     <div className="App">
       {/* ขึ้นด้วยตัวใหญ่ คิดว่าเป็น component เสมอ */}
       <SelfIntroduction name="Beam" />
+      <SelfIntroduction name="" />
+
+      <SelfIntroduction name={undefined} />
+      <SelfIntroduction />
     </div>
   );
 }
