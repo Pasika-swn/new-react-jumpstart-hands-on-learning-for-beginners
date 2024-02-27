@@ -14,7 +14,6 @@ import "./App.css";
 
 const SelfIntroduction = ({ name = "unknown", DOB, hobbies = [] }) => {
   return (
-    // we can return just only one jsx elem
     <div>
       <h1>
         "My name is <span style={{ color: "lightgreen" }}>{name}</span>."
@@ -33,6 +32,7 @@ const SelfIntroduction = ({ name = "unknown", DOB, hobbies = [] }) => {
     </div>
   );
 };
+
 SelfIntroduction.propTypes = {
   name: PropTypes.string.isRequired,
 };
@@ -44,12 +44,21 @@ const Test = ({ children }) => {
 function App() {
   // declare state
   const [name, setName] = useState("");
+ 
 
   return (
     <div className="App">
+
+      <label htmlFor="name">Name:</label>
+      <input id="name" value={name} onChange={(event) => {
+        setName(event.target.value)
+      }} />
+      <button>Save</button>
+
+
       <SelfIntroduction name="BEAM" />
 
-      <Test>123</Test>
+      <Test>123</Test> 
     </div>
   );
 }
