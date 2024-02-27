@@ -3,21 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const MyComponent = () => {
+  return null;
+}
+
 function App() {
   return(
     <div className='App'>
       <h1>Hello</h1>
 
-      <div />
-
-      <div>Child</div>
-
-      <div>
-        <p>Another Child</p>
-      </div>
-
-      <div role="alert" id="foo1">1</div>
-      <div role={`alert`} id="foo2">2</div>
+      {/* ขึ้นด้วยตัวใหญ่ คิดว่าเป็น component เสมอ */}
+      <MyComponent />
     </div>
   )
 }
