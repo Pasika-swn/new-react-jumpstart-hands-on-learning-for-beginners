@@ -5,6 +5,14 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
+import "dayjs/locale/th";
+import dayjs from 'dayjs';
+import bhuddishtEra from 'dayjs/plugin/buddhistEra';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+dayjs.locale('th');
+dayjs.extend(localizedFormat);
+dayjs.extend(bhuddishtEra);
+
 // js doc
 /**
  *
@@ -18,7 +26,7 @@ const SelfIntroduction = ({ name = "unknown", DOB, hobbies = [] }) => {
       <h1>
         "My name is <span style={{ color: "orange" }}>{name}</span>."
       </h1>
-      {DOB ? <h2>I was born in {DOB}</h2> : null}
+      {DOB ? <h2>I was born in {dayjs(DOB).format('D MMM BBBB')}</h2> : null}
       {hobbies.length > 0 ? (
         <div>
           <h2>My hobbies are</h2>
@@ -61,6 +69,7 @@ function App() {
       
         <label htmlFor="dob">DOB:</label>
         <input
+          type="date"
           id="dob"
           value={DOB}
           onChange={(event) => {
