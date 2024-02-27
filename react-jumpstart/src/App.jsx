@@ -1,10 +1,17 @@
+// @ts-check
 import PropTypes from "prop-types";
-import { useState } from "react";
+import React, { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-// props is immutable obj
+// js doc
+/**
+ * 
+ * @type {React.FC<{name:string}>}
+ * @returns  {React.ReactNode}
+ */
+
 const SelfIntroduction = ({ name = "unknown", DOB, hobbies = [] }) => {
   return (
     // we can return just only one jsx elem
@@ -36,9 +43,7 @@ function App() {
   return (
     <div className="App">
       <SelfIntroduction
-        // name="Beam"
-        DOB="22/9/37"
-        hobbies={["playing game", "watching movies", "Eat"]}
+        name= "BEAM"
       />
 
       <Test>123</Test>
