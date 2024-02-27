@@ -42,6 +42,9 @@ const Test = ({ children }) => {
 };
 
 function App() {
+  // declare state
+  const [name, setName] = useState("");
+
   return (
     <div className="App">
       <SelfIntroduction name="BEAM" />
