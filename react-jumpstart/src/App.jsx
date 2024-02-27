@@ -44,6 +44,7 @@ const Test = ({ children }) => {
 function App() {
   // declare state
   const [name, setName] = useState("");
+  const [data, setData] = useState({ name: undefined });
 
   return (
     <div className="App">
@@ -55,9 +56,17 @@ function App() {
           setName(event.target.value);
         }}
       />
-      <button>Save</button>
+      <button
+        onClick={() => {
+          // setData({ name: name }); //ย่อรูปได้เป็น
+          setData({ name });
+          setName("");
+        }}
+      >
+        Save
+      </button>
 
-      <SelfIntroduction name={name ? name : undefined} />
+      <SelfIntroduction name={data.name} />
 
       <Test>123</Test>
     </div>
@@ -65,4 +74,3 @@ function App() {
 }
 
 export default App;
-
