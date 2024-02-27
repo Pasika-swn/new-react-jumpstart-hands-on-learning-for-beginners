@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -23,34 +24,28 @@ const SelfIntroduction = ({ name = "unknown", DOB, hobbies = [] }) => {
     </div>
   );
 };
+SelfIntroduction.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 
 const Test = ({ children }) => {
-  // console.log(children);
   return <h3>{children}</h3>;
 };
 
 function App() {
   return (
     <div className="App">
-      {/* ขึ้นด้วยตัวใหญ่ คิดว่าเป็น component เสมอ */}
       <SelfIntroduction
-        name="Beam"
+        // name="Beam"
         DOB="22/9/37"
         hobbies={["playing game", "watching movies", "Eat"]}
       />
 
-      <Test>
-        <div>
-          <div>I love you</div>
-          <h2>Halooo</h2>
-          ABC
-        </div>
-      </Test>
-
-      <Test>ABCD</Test>
       <Test>123</Test>
     </div>
   );
 }
 
 export default App;
+
+//[in terminal] yarn add prop-types -D
