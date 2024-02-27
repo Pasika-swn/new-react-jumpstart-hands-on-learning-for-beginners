@@ -16,7 +16,7 @@ const SelfIntroduction = ({ name = "unknown", DOB, hobbies = [] }) => {
   return (
     <div>
       <h1>
-        "My name is <span style={{ color: "lightgreen" }}>{name}</span>."
+        "My name is <span style={{ color: "orange" }}>{name}</span>."
       </h1>
       {DOB ? <h2>I was born in {DOB}</h2> : null}
       {hobbies.length > 0 ? (
@@ -44,25 +44,25 @@ const Test = ({ children }) => {
 function App() {
   // declare state
   const [name, setName] = useState("");
- 
 
   return (
     <div className="App">
-
       <label htmlFor="name">Name:</label>
-      <input id="name" value={name} onChange={(event) => {
-        setName(event.target.value)
-      }} />
+      <input
+        id="name"
+        value={name}
+        onChange={(event) => {
+          setName(event.target.value);
+        }}
+      />
       <button>Save</button>
 
+      <SelfIntroduction name={name ? name : undefined} />
 
-      <SelfIntroduction name="BEAM" />
-
-      <Test>123</Test> 
+      <Test>123</Test>
     </div>
   );
 }
 
 export default App;
 
-//[in terminal] yarn add prop-types -D
