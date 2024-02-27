@@ -1,21 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
-const MyComponent = () => {
-  return null;
-}
+// props is immutable obj
+const SelfIntroduction = (props) => {
+  return <h1>"My name is {props.name}."</h1>;
+};
 
 function App() {
-  return(
-    <div className='App'>
-      <h1>Hello</h1>
-
+  return (
+    <div className="App">
       {/* ขึ้นด้วยตัวใหญ่ คิดว่าเป็น component เสมอ */}
-      <MyComponent />
+      <SelfIntroduction name="Beam" />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
