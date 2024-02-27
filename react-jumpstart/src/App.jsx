@@ -4,13 +4,22 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 // props is immutable obj
-const SelfIntroduction = ({ name = "unknown", DOB, hobbies=[] }) => {
+const SelfIntroduction = ({ name = "unknown", DOB, hobbies = [] }) => {
   return (
     // we can return just only one jsx elem
     <div>
       <h1>"My name is {name}."</h1>;{/* conditional rendering => shorted-if */}
       {DOB ? <h2>I was born in {DOB}</h2> : null}
-      {hobbies.length > 0 ? <h2>My hobbies are "{hobbies.join(", ")}"</h2> : null}
+      {hobbies.length > 0 ? (
+        <div>
+          <h2>My hobbies are</h2>
+          {hobbies.map((item, index) => (
+            <div key={item}>
+              {index + 1}. {item}
+            </div>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 };
@@ -22,9 +31,7 @@ function App() {
       <SelfIntroduction
         name="Beam"
         DOB="22/9/37"
-
-        // dont wanna render hobbies
-        // hobbies={["playing game", "watching movies", "Eat"]}
+        hobbies={["playing game", "watching movies", "Eat"]}
       />
     </div>
   );
