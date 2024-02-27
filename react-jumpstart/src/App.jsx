@@ -8,7 +8,7 @@ import "./App.css";
 // js doc
 /**
  *
- * @type {React.FC<{name:string}>}
+ * @type {React.FC<{name:string ,DOB:string}>}
  * @returns  {React.ReactNode}
  */
 
@@ -44,7 +44,9 @@ const Test = ({ children }) => {
 function App() {
   // declare state
   const [name, setName] = useState("");
-  const [data, setData] = useState({ name: undefined });
+  const [data, setData] = useState({ name: undefined, DOB: undefined });
+
+  const [DOB, setDOB] = useState("");
 
   return (
     <div className="App">
@@ -56,18 +58,27 @@ function App() {
           setName(event.target.value);
         }}
       />
-      <button
-        onClick={() => {
-          // setData({ name: name }); //ย่อรูปได้เป็น
-          setData({ name });
-          setName("");
-        }}
-      >
-        Save
-      </button>
+      
+        <label htmlFor="dob">DOB:</label>
+        <input
+          id="dob"
+          value={DOB}
+          onChange={(event) => {
+            setDOB(event.target.value);
+          }}
+        />
+        <button
+          onClick={() => {
+            setData({name, DOB})
+            setDOB("");
+            setName("")
+          }}
+        >
+          Save
+        </button>
+      
 
-      <SelfIntroduction name={data.name} />
-
+      <SelfIntroduction name={data.name} DOB={data.DOB} />
       <Test>123</Test>
     </div>
   );
