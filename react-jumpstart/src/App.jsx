@@ -7,7 +7,7 @@ import "./App.css";
 
 // js doc
 /**
- * 
+ *
  * @type {React.FC<{name:string}>}
  * @returns  {React.ReactNode}
  */
@@ -16,7 +16,9 @@ const SelfIntroduction = ({ name = "unknown", DOB, hobbies = [] }) => {
   return (
     // we can return just only one jsx elem
     <div>
-      <h1>"My name is {name}."</h1>;{/* conditional rendering => shorted-if */}
+      <h1>
+        "My name is <span style={{ color: "lightgreen" }}>{name}</span>."
+      </h1>
       {DOB ? <h2>I was born in {DOB}</h2> : null}
       {hobbies.length > 0 ? (
         <div>
@@ -42,9 +44,7 @@ const Test = ({ children }) => {
 function App() {
   return (
     <div className="App">
-      <SelfIntroduction
-        name= "BEAM"
-      />
+      <SelfIntroduction name="BEAM" />
 
       <Test>123</Test>
     </div>
