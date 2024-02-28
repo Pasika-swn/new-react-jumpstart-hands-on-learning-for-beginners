@@ -56,52 +56,57 @@ function App() {
 
   const [DOB, setDOB] = useState("");
 
-  const [hobbies, setHobbies] = useState([""]);
+  const [hobbies, setHobbies] = useState([]);
 
   return (
     <div className="App">
-      <label htmlFor="name">Name:</label>
-      <input
-        id="name"
-        value={name}
-        onChange={(event) => {
-          setName(event.target.value);
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "160px 1fr 48px",
+          gap: "0.5rem",
         }}
-      />
+      >
+        <label htmlFor="name">Name:</label>
+        <input
+          id="name"
+          value={name}
+          onChange={(event) => {
+            setName(event.target.value);
+          }}
 
-      <label htmlFor="dob">DOB:</label>
-      <input
-        type="date"
-        id="dob"
-        value={DOB}
-        onChange={(event) => {
-          setDOB(event.target.value);
-        }}
-      />
+          style={{gridColumn: 'span 2'}}
+        />
 
-      <div>
+        <label htmlFor="dob">Date of Birth:</label>
+        <input
+          type="date"
+          id="dob"
+          value={DOB}
+          onChange={(event) => {
+            setDOB(event.target.value);
+          }}
+          style={{gridColumn:"span 2"}}
+        />
+
         {hobbies.map((item, index) => (
-          <div key={index}>
-            <label htmlFor={`hobby-${index}`}>Hobby{index + 1}: </label>
+          <div key={index} style={{display:'contents'}}>
+            <label htmlFor={`hobby-${index}`} style={{gridColumn:"1"}}>Hobby{index + 1}: </label>
             <input
               id={`hobby-${index}`}
               value={item}
               onChange={(event) => {
-                const newValue = event.target.value;
-                // setHobbies(hobbies.map((hobby, hobbyIndex)=>{
-                //   if(hobbyIndex===index){
-                //     return newValue
-                //   }else {
-                //     return hobby
-                //   }
-                // }))
-
                 //จำค่าเวลาเพิ่มรายละเอียดใน hobby ช่องต่างๆ
+                //For each element (hobby) and its index (hobbyIndex) in the original hobbies array:
+                // If the current element's index (hobbyIndex) matches the index of the edited input (index):
+                // The newValue (the new value entered) is returned, replacing the existing value at that index in the new hobbies array.
+                // If the current element's index doesn't match the edited input:
+                // The original hobby value is simply returned, remaining unchanged in the new hobbies array.
                 const newHobbies = hobbies.map((hobby, hobbyIndex) =>
                   hobbyIndex === index ? newValue : hobby
                 );
 
-                console.log("+++", newHobbies);
+                // console.log("+++", newHobbies);
 
                 setHobbies(newHobbies);
               }}
@@ -109,11 +114,12 @@ function App() {
             <button
               onClick={() => {
                 setHobbies(
-                  hobbies.filter((del, delIndex) => 
-                     delIndex != index //ถ้าไม่ใช่ index ที่เรากดลบ ให้เก็บเอาไว้(แสดง)
+                  hobbies.filter(
+                    (del, delIndex) => delIndex != index //ถ้าไม่ใช่ index ที่เรากดลบ ให้เก็บเอาไว้(แสดง)
                   )
                 );
               }}
+              style={{backgroundColor:"red", width:"max-content"}}
             >
               Del
             </button>
@@ -123,20 +129,22 @@ function App() {
           onClick={() => {
             setHobbies([...hobbies, ""]);
           }}
+          style={{gridColumn: "2", width:"max-content"}}
         >
           Add another hobby
         </button>
-      </div>
 
-      <button
-        onClick={() => {
-          setData({ name, DOB });
-          setDOB("");
-          setName("");
-        }}
-      >
-        Save
-      </button>
+        <button
+          onClick={() => {
+            setData({ name, DOB });
+            setDOB("");
+            setName("");
+          }}
+          style={{gridColumn:"1 /span 3", backgroundColor:"limegreen"}}
+        >
+          Save
+        </button>
+      </div>
 
       <SelfIntroduction name={data.name} DOB={data.DOB} />
       <Test>123</Test>
