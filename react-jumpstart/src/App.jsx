@@ -84,7 +84,7 @@ function App() {
           <div key={index}>
             <label htmlFor={`hobby-${index}`}>Hobby{index + 1}: </label>
             <input
-              id= {`hobby-${index}`}
+              id={`hobby-${index}`}
               value={item}
               onChange={(event) => {
                 const newValue = event.target.value;
@@ -95,17 +95,28 @@ function App() {
                 //     return hobby
                 //   }
                 // }))
-                
+
                 //จำค่าเวลาเพิ่มรายละเอียดใน hobby ช่องต่างๆ
                 const newHobbies = hobbies.map((hobby, hobbyIndex) =>
                   hobbyIndex === index ? newValue : hobby
                 );
 
-                console.log("+++",newHobbies);
+                console.log("+++", newHobbies);
 
                 setHobbies(newHobbies);
               }}
             />
+            <button
+              onClick={() => {
+                setHobbies(
+                  hobbies.filter((del, delIndex) => 
+                     delIndex != index //ถ้าไม่ใช่ index ที่เรากดลบ ให้เก็บเอาไว้(แสดง)
+                  )
+                );
+              }}
+            >
+              Del
+            </button>
           </div>
         ))}
         <button
