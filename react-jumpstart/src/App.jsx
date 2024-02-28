@@ -82,9 +82,9 @@ function App() {
       <div>
         {hobbies.map((item, index) => (
           <div key={index}>
-            <label htmlFor="hobby">Hobby{index + 1}: </label>
+            <label htmlFor={`hobby-${index}`}>Hobby{index + 1}: </label>
             <input
-              id="hobby"
+              id= {`hobby-${index}`}
               value={item}
               onChange={(event) => {
                 const newValue = event.target.value;
