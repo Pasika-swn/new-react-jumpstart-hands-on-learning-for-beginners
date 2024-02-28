@@ -5,7 +5,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-import '@picocss/pico'
+import "@picocss/pico";
 import "dayjs/locale/th";
 import dayjs from "dayjs";
 import bhuddishtEra from "dayjs/plugin/buddhistEra";
@@ -75,8 +75,7 @@ function App() {
           onChange={(event) => {
             setName(event.target.value);
           }}
-
-          style={{gridColumn: 'span 2'}}
+          style={{ gridColumn: "span 2" }}
         />
 
         <label htmlFor="dob">Date of Birth:</label>
@@ -87,16 +86,19 @@ function App() {
           onChange={(event) => {
             setDOB(event.target.value);
           }}
-          style={{gridColumn:"span 2"}}
+          style={{ gridColumn: "span 2" }}
         />
 
         {hobbies.map((item, index) => (
-          <div key={index} style={{display:'contents'}}>
-            <label htmlFor={`hobby-${index}`} style={{gridColumn:"1"}}>Hobby{index + 1}: </label>
+          <div key={index} style={{ display: "contents" }}>
+            <label htmlFor={`hobby-${index}`} style={{ gridColumn: "1" }}>
+              Hobby{index + 1}:{" "}
+            </label>
             <input
               id={`hobby-${index}`}
               value={item}
               onChange={(event) => {
+                const newValue = event.target.value;
                 //จำค่าเวลาเพิ่มรายละเอียดใน hobby ช่องต่างๆ
                 //For each element (hobby) and its index (hobbyIndex) in the original hobbies array:
                 // If the current element's index (hobbyIndex) matches the index of the edited input (index):
@@ -120,7 +122,7 @@ function App() {
                   )
                 );
               }}
-              style={{backgroundColor:"red", width:"max-content"}}
+              style={{ backgroundColor: "red", width: "max-content" }}
             >
               Del
             </button>
@@ -130,25 +132,29 @@ function App() {
           onClick={() => {
             setHobbies([...hobbies, ""]);
           }}
-          style={{gridColumn: "2", width:"max-content"}}
+          style={{ gridColumn: "2", width: "max-content" }}
         >
           Add another hobby
         </button>
 
         <button
           onClick={() => {
-            setData({ name, DOB });
+            setData({ name, DOB, hobbies });
             setDOB("");
             setName("");
+            setHobbies([""]);
           }}
-          style={{gridColumn:"1 /span 3", backgroundColor:"limegreen"}}
+          style={{ gridColumn: "1 /span 3", backgroundColor: "limegreen" }}
         >
           Save
         </button>
       </div>
 
-      <SelfIntroduction name={data.name} DOB={data.DOB} />
-      <Test>123</Test>
+      <SelfIntroduction
+        name={data.name}
+        DOB={data.DOB}
+        hobbies={data.hobbies}
+      />
     </div>
   );
 }
