@@ -82,8 +82,30 @@ function App() {
       <div>
         {hobbies.map((item, index) => (
           <div key={index}>
-            <label htmlFor="hobby">Hobby</label>
-            <input id="hobby" />
+            <label htmlFor="hobby">Hobby{index + 1}: </label>
+            <input
+              id="hobby"
+              value={item}
+              onChange={(event) => {
+                const newValue = event.target.value;
+                // setHobbies(hobbies.map((hobby, hobbyIndex)=>{
+                //   if(hobbyIndex===index){
+                //     return newValue
+                //   }else {
+                //     return hobby
+                //   }
+                // }))
+                
+                //จำค่าเวลาเพิ่มรายละเอียดใน hobby ช่องต่างๆ
+                const newHobbies = hobbies.map((hobby, hobbyIndex) =>
+                  hobbyIndex === index ? newValue : hobby
+                );
+
+                console.log("+++",newHobbies);
+
+                setHobbies(newHobbies);
+              }}
+            />
           </div>
         ))}
         <button
