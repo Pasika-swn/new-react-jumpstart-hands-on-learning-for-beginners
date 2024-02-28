@@ -5,6 +5,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
+import '@picocss/pico'
 import "dayjs/locale/th";
 import dayjs from "dayjs";
 import bhuddishtEra from "dayjs/plugin/buddhistEra";
@@ -56,7 +57,7 @@ function App() {
 
   const [DOB, setDOB] = useState("");
 
-  const [hobbies, setHobbies] = useState([]);
+  const [hobbies, setHobbies] = useState([""]);
 
   return (
     <div className="App">
